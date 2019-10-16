@@ -1,0 +1,35 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">Age</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Country</th>
+            <th scope="col">State</th>
+            <th scope="col">Address</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let patient of patients">
+            <td>{{ patient.id }}</td>
+            <td>{{ patient.firstName }}</td>
+            <td>{{ patient.lastName }}</td>
+            <td>{{ patient.age }}</td>
+            <td>{{ patient.sex }}</td>
+            <td>{{ patient.country }}</td>
+            <td>{{ patient.state }}</td>
+            <td>{{ patient.address }}</td>
+            <td><button (click)="patientDetails(patient.id)" class="btn btn-info" style="margin-left: 10px">Details</button>
+              <button (click)="updatePatient(patients.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="deletePatient(patient.id)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
